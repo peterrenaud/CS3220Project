@@ -3,11 +3,12 @@ import java.io.*;
 class managementTool {
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
+    // could create a menu in order to search through different categories easier
     //    System.out.print("Would you like to view election results or Elected official information?\n");
     //    System.out.print("Enter (politics)\n");
     //String input = sc.nextLine();
     String input = "politics";
-    if(input.equals("politics")) {
+    if(input.equals("politics")) { // switched to menu later
       Politics politics = new Politics();
       System.out.print("Would you like to view election results or Elected official information?\n");
       //      input = sc.nextLine();

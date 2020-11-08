@@ -6,28 +6,30 @@ import java.util.*;
 import java.io.*;
 
 class CSVParser {
-  String line = "";
   public CSVParser() {
 
   }
-  public void parseFile(String fileName) {
+  /**
+   * Opens the file and then parses the csv file and stores it in an arraylist. The program
+   * also converts the arraylist into the required type requred for a Jtable. After this it creates a
+   * JFrame and JTable to display the data visually
+   * @param filePath; the file path where the file to be parsed is located
+   * @return void
+   */
+  public void parseFile(String filePath) {
     int numStrings = 0;
     String line = "";
     List<String> lines = new ArrayList<String>();
-    try(BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+    try(BufferedReader br = new BufferedReader(new FileReader(filePath))) {
     while((line = br.readLine()) != null) {
       lines.add(line);
       numStrings++;
-      //        String data = line.split(",");
-      //        for (String n: data) {
-      //  System.out.print(n);
-      //}
-      //        System.out.println(line);
-      // System.out.println();
     }
+    // the first of the table is the column headers
     String[] columnNames = lines.remove(0).split(",");
+    // the rest is stored in 2d arrays to be used in the JTable
     String[][] data = new String[lines.size()][columnNames.length];
-
+    // take the lines from the arraylist and add them to the 2d array
     for (int i = 0; i<numStrings-1; i++) {
       data[i] = lines.remove(0).split(",");
     }

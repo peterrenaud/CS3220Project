@@ -15,7 +15,19 @@ class Politics {
    */
   public void getElectionResults(int year) {
     CSVParser parser = new CSVParser();
-    // only working with the one year until it is working properly
-    parser.parseFile("./results-2018.csv");
+    switch (year) {
+    case 2018:
+      parser.parseUrl("https://opendata.citywindsor.ca/Uploads/results-2018.csv");
+      break;
+    case 2020:
+      parser.parseUrl("https://opendata.citywindsor.ca/Uploads/Results-2020.csv");
+      break;
+    default:
+      System.out.println("Invalid year");
+    }
+  }
+  public void getElectedOfficials() {
+    CSVParser parser = new CSVParser();
+    parser.parseUrl("https://opendata.citywindsor.ca/Uploads/City%20Windsor%20Elected%20Officials.csv");
   }
 }

@@ -6,6 +6,7 @@ class managementTool {
     String[] mainCategories = {"1 politics", "2 emergency services"};
     String[] politicsCategories = {"1 results", "2 Elected officials information"};
     String[] emergencyCategories = {"1 police", "2 fire", "3 hospital"};
+    String[] resultsYears = {"2018", "2020"};
     displayCategories(mainCategories);
     int selection = sc.nextInt();
     System.out.flush();
@@ -18,7 +19,8 @@ class managementTool {
       selection = sc.nextInt();
       switch (selection) {
       case 1:
-        System.out.print("which year would you like to view?");
+        System.out.println("What year would you like to view?");
+        displayCategories(resultsYears);
         int year = sc.nextInt(); // filler until later years are added
         politics.getElectionResults(year);
         break;

@@ -3,8 +3,8 @@ java_binary(
 	srcs = ["managementTool.java"],
 	main_class = "managementTool",
 	deps = [
-	":politics",
-	":emergency_services"],
+	     ":politics",
+	"    :emergency_services"],
 
 )
 

@@ -2,7 +2,9 @@ java_binary(
 	name = "management_tool",
 	srcs = ["managementTool.java"],
 	main_class = "managementTool",
-	deps=[":politics","emergency_services"],
+	deps = [
+	":politics",
+	":emergency_services"],
 
 )
 
@@ -11,18 +13,18 @@ java_binary(
 java_library(
 	name = "politics",
 	srcs = ["Politics.java"],
-	deps=[":csv_parser"],
+	deps = [":csv_parser"],
 )
 
 java_library(
 	name = "election_results",
 	srcs = ["ElectionResults.java"],
-	deps=[":csv_parser"],
+	deps = [":csv_parser"],
 )
 java_library(
 	name = "emergency_services",
 	srcs = ["EmergencyServices.java"],
-	deps=[":csv_parser"],
+	deps = [":csv_parser"],
 )
 java_library(
 	name = "output_table",
@@ -31,5 +33,5 @@ java_library(
 java_library(
 	name = "csv_parser",
 	srcs = ["CSVParser.java"],
-	deps=[":output_table"],
+	deps = [":output_table"],
 )

@@ -4,6 +4,7 @@ import javax.swing.*;
 
 // this class can be used later should other methods require the ability to perform arithatic on the data
 class ElectionResults{
+  private int year;
   private int ward;
   private int poll;
   private String pollName;
@@ -37,6 +38,7 @@ class ElectionResults{
   public int getTotalVotes() {
     return totalVotes;
   }
+
 
 
 
